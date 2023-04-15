@@ -17,7 +17,7 @@ const AddVacancy = (req,res) => {
           requirementsConcate += ","  
         } 
     }
-    conn.query(sql,[idcompany,title,requirementsConcate,description,curDate,salary,jobFunction,graduates,experiences,majors],(err,data) => {
+    conn.query(sql,[idcompany,title,requirementsConcate,description,curDate,salary,jobFunction,graduates,majors,experiences],(err,data) => {
         if(err) return err
         if(data.affectedRows === 0) return res.status(500).json({massage : "Something wrong, please try again",status : 500})
         res.status(200).json({massage : "Lowongan kerja berhasil ditambahkan",status:200})
@@ -125,7 +125,6 @@ const GetCompanyVacancy = (req,res) => {
         if(err) throw err
         if(data.affectedRows === 0) return res.status(204).json({massage: 'SOMETHING WRONG'})
         let vacancy = []
-        // console.log(data)
         for(let i of data) {
             vacancy.push(
                 {

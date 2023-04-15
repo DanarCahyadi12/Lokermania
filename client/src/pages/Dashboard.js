@@ -23,7 +23,7 @@ const Dashboard = () => {
         theme: "light",
     });
 
-    const Notification = (email) => toast.success(`${email} berhasil dicopy. Silahkan tunggu`, {
+    const Notification = (email) => toast.success(`${email} berhasil dicopy`, {
         position: "top-center",
         autoClose: 1200,
         hideProgressBar: false,
@@ -200,6 +200,10 @@ const Dashboard = () => {
                         </div>
                     </form>
                     <Link onClick={CopyEmail} className='btn rounded-pill tombol-index text-white fw-bold mx-3' >Kirim pesan email</Link>
+                    <button onClick={() => {
+                        navigator.clipboard.writeText(detailData.email)
+                        Notification(detailData.email)
+                    }} className='btn rounded-pill tombol-index text-white fw-bold mx-3' >Copy email</button>
                     <button  className='btn rounded-pill btn-danger text-white fw-bold mx-3' onClick={HandleDeleteApplicants}>Hapus Pelamar</button>
                     
                 </Modal.Body>

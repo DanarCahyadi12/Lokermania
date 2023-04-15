@@ -8,7 +8,7 @@ const DisplayCard = ({props}) => {
    
     return props.data.map((val,i) => {
         return (
-        <div className="card" style={{ width: '120rem' }} key={i}>
+        <div className="card" key={i}>
             <div className="container mt-3 mx-3 ">
             <img src={require(`../photo-profile/${val.photo_path}`)}  className="rounded-circle" style={{width: "90px",height: "90px"}}alt="Avatar" />
                 <div className="card-title mt-4">

@@ -84,9 +84,9 @@ const SearchLoker = () => {
                 </div>
             </div>
 
-            <div className="container-fluid ">
-                <div className="container mt-5 ">
-                    <div className="row">
+            <div className="container-fluid">
+                <div className="row mt-5 ">
+                    <div className="col-5 gap-3 d-flex">
                     {vacancyResult  && <DisplayCard props={vacancyResult}/>}
                     {!vacancyResult && allVacancy && <DisplayCard props={allVacancy}/>}
                     {vacancyResult?.data?.length === 0 && <div className="text-center fs-5 mt-5">Lowongan yang anda cari tidak ditemukan :(</div>}
